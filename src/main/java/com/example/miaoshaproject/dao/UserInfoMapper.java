@@ -1,6 +1,8 @@
 package com.example.miaoshaproject.dao;
 
 import com.example.miaoshaproject.dataobject.UserInfo;
+import org.apache.ibatis.annotations.Mapper;
+
 
 public interface UserInfoMapper {
     /**
