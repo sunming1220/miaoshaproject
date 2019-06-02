@@ -1,5 +1,6 @@
 package com.example.miaoshaproject.controller;
 
+import com.example.miaoshaproject.response.Response;
 import com.example.miaoshaproject.service.UserService;
 import com.example.miaoshaproject.service.model.UserModel;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +18,10 @@ public class UserController {
 
     @RequestMapping("/get")
     @ResponseBody
-    public UserModel getUser(@RequestParam("id") Integer id){
+    public Response getUser(@RequestParam("id") Integer id){
 
         //调用service服务获取对应ID的用户对象并返回给前端
         UserModel userModel = userService.getUserById(id);
-        return userModel;
+        return new Response(200,"success",userModel);
     }
 }
